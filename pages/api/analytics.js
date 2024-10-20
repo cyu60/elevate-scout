@@ -1,4 +1,4 @@
-import { query, initializeDatabase } from "../../singleStoreClient";
+import { query, initializeDatabase } from "../../lib/singleStoreClient";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
