@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@400;700&display=swap'); */
 
 /* Body and Font Setup */
 body {
@@ -15,7 +15,7 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Headings */
@@ -25,26 +25,26 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-orbitron text-neon-green;
+  @apply text-[#9687EC];
 }
 
 /* Links */
 a {
-  color: #00FF00; /* Neon green */
+  color: #9687EC; 
   text-decoration: none;
 }
 
 a:hover {
-  color: #0fce6d;
+  color: #5644ba;
 }
 
 /* Buttons */
 button {
-  @apply bg-green-600 text-white px-4 py-2 rounded-md font-bold transition duration-300 ease-in-out;
+  @apply bg-[#9687EC] text-white px-4 py-2 rounded-md font-bold transition duration-300 ease-in-out;
 }
 
 button:hover {
-  background-color: #FF0000; /* Red color on hover */
+  background-color: #5644ba; /* Red color on hover */
 }
 
 button:disabled {
@@ -57,12 +57,12 @@ button:disabled {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #0fce6d; /* Neon green */
+  background-color: #9687EC; /* Neon green */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #121212; /* Dark background */
+  background-color: #ffff; /* Dark background */
 }
 
 /* Analytics Grid Container */
@@ -72,18 +72,18 @@ button:disabled {
 
 /* Analytics Card */
 .analytics-card {
-  @apply bg-black text-white rounded-lg p-4 flex flex-col;
+  @apply bg-[#f7f7f7] text-black rounded-lg p-4 flex flex-col;
   height: 400px; /* Ensure consistent height */
 }
 
 /* Live Chat Card */
 .commentary {
-  @apply bg-black rounded-lg flex flex-col h-full text-neon-green;
+  @apply bg-white rounded-lg flex flex-col h-full text-[#9687EC];
 }
 
 /* Video Player Styles */
 .video-container {
-  @apply relative bg-black border border-gray-700;
+  @apply relative bg-white border border-gray-700;
 }
 
 /* AI Watching Indicator */
@@ -92,19 +92,19 @@ button:disabled {
 }
 
 /* Custom Fonts */
-.font-orbitron {
+/* .font-orbitron {
   font-family: 'Orbitron', sans-serif;
 }
 
 .font-roboto {
   font-family: 'Roboto', sans-serif;
-}
+} */
 
 /* Custom Colors */
 .text-neon-green {
-  color: #00FF00;
+  color: #9687EC;
 }
 
-.text-neon-purple {
+/* .text-neon-purple {
   color: #DA70D6;
-}
+} */

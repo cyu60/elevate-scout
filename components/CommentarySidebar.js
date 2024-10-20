@@ -1,6 +1,5 @@
-// components/CommentarySidebar.js
-
 import { useEffect, useRef, useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 export default function CommentarySidebar({
   commentary,
@@ -31,16 +30,25 @@ export default function CommentarySidebar({
 
   return (
     <div
-      className="commentary bg-black rounded-lg flex flex-col h-full text-neon-green"
+      className="commentary bg-white rounded-lg flex flex-col h-full text-[#9687EC]"
       style={{ maxHeight: "80vh" }}
     >
-      <div className="p-4 bg-black border-b border-gray-600 flex-shrink-0">
+      <div className="p-4 bg-white border-b border-gray-600 flex-shrink-0 flex items-center justify-between">
         <h2 className="text-2xl font-bold mb-2">Live Chat</h2>
-        <button onClick={onToggleAIMessages} className="w-full">
-          {showAIMessages ? "Hide AI Messages" : "Show AI Messages"}
+        <button
+          onClick={onToggleAIMessages}
+          className="text-2xl focus:outline-none"
+          aria-label={showAIMessages ? "Hide AI Messages" : "Show AI Messages"}
+        >
+          {showAIMessages ? <FaEye /> : <FaEyeSlash />}
         </button>
       </div>
-      <div className="flex-grow overflow-y-auto p-4 bg-black" ref={chatBoxRef}>
+      {/* Adjusted the messages container */}
+      <div
+        className="flex-grow overflow-y-auto p-4 bg-white"
+        style={{ maxHeight: "350px" }} // Set a specific height or max-height
+        ref={chatBoxRef}
+      >
         <div className="space-y-4">
           {commentary.map((comment, index) => {
             if (showAIMessages || comment.type !== "ai") {
@@ -50,7 +58,7 @@ export default function CommentarySidebar({
                   className={`p-3 rounded shadow ${
                     comment.homelessnessProbability !== undefined &&
                     comment.homelessnessProbability >= 75
-                      ? "bg-green-600 text-white text-right"
+                      ? "bg-white text-black text-right"
                       : "bg-gray-700 text-white"
                   }`}
                 >
@@ -73,7 +81,9 @@ export default function CommentarySidebar({
           })}
         </div>
       </div>
-      {/* <form
+      {/* Uncomment and modify the form below if you want to enable user messaging */}
+      {/* 
+      <form
         onSubmit={handleSubmit}
         className="p-4 bg-black border-t border-gray-600 flex gap-2 flex-shrink-0"
       >
@@ -84,10 +94,7 @@ export default function CommentarySidebar({
           placeholder="Type your message..."
           className="flex-grow px-3 py-2 bg-gray-600 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500"
         />
-        <button
-          type="submit"
-          className="send"
-        >
+        <button type="submit" className="send">
           Send
         </button>
         <button
@@ -96,9 +103,10 @@ export default function CommentarySidebar({
           className="generate-commentary"
           disabled={isAIWatching}
         >
-          {isAIWatching ? 'Speaking...' : 'Speak'}
+          {isAIWatching ? "Speaking..." : "Speak"}
         </button>
-      </form> */}
+      </form>
+      */}
     </div>
   );
 }
