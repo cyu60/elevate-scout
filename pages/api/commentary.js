@@ -1,5 +1,5 @@
-import { generateCommentary } from "../../commentaryGenerator";
-import { GROQ_API_KEY } from "../../config";
+import { generateCommentary } from "../../lib/commentaryGenerator";
+import { GROQ_API_KEY } from "../../lib/config";
 
 export default async function handler(req, res) {
   console.log("Commentary API handler called");
